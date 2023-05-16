@@ -1,0 +1,116 @@
+<div>
+    {{#with person}}
+    <header>
+        <div>
+            <h1>{{name}}</h1>
+        </div>
+        <div>
+            <em>Gender: {{gender}}</em>
+        </div>
+        <br>
+        <div>
+            <a>Age: {{age}}</a>
+        </div>
+        <br>
+        <div>
+            <b>{{address.country}} , {{address.city}} , {{address.street}}</b>
+        </div>
+    </header>
+    <hr>
+    <section>
+        {{> title data="Education"}}
+        {{#each education}}
+
+        <div>
+            <p>University: {{university}} , ( {{graduationYear}} )</p>
+        </div>
+        <br>
+        <div>Degree/major: {{degree}} / {{major}}</div>
+
+        {{/each}}
+    </section>
+    <br>
+    <section>
+        {{> title data="Software Engineer"}}
+        {{#each workExperience}}
+
+        <div>
+            <a> Company: {{company}}</a>
+            <p>Industry: {{industry}}</p>
+            <p>Duration: {{startDate}} - {{endDate}}</p>
+            <p>Responsibilities: {{responsibilities}}</p>
+        </div>
+        <br>
+        <hr>
+
+        {{#each employees}}
+        <b>Projects</b>
+        {{#each projects}}
+        <ul>
+            <li>
+                <p>{{name}}</p>
+                <p>Description: <i>{{description}}</i></p>
+                <p>Status: {{status}}</p>
+            </li>
+        </ul>
+        <br>
+
+        {{#each teams}}
+        <ul>
+            <li>
+                <p>Team: {{team_name}}</p>
+                <p>{{team_leader.name}}</p>
+                <p>email: john.smith@example.com</p>
+            </li>
+        </ul>
+        <br>
+        {{#each team_members}}
+        <ul>
+            <li>
+                <p>Title: {{title}}</p>
+                <p>{{name}}</p>
+                <p>email: alice.johnson@example.com</p>
+                <p>Skills: Java, Python, SQL</p>
+            </li>
+        </ul>
+        <br>
+
+        {{#each projects}}
+        <ul>
+            <li>
+                <p>{{name}}</p>
+                <p>Description: <i>{{description}}</i></p>
+                <p>Technologies: Java, Spring Framework</p>
+            </li>
+        </ul>
+        <br>
+
+        {{#each team_members}}
+        <ul>
+            <li>
+                <p>{{name}}</p>
+                <p>Title: <i>{{title}}</i></p>
+            </li>
+        </ul>
+
+        {{/each}}
+        {{/each}}
+        {{/each}}
+        {{/each}}
+        {{/each}}
+        {{/each}}
+        {{/each}}
+    </section>
+    <br>
+    <hr>
+
+
+
+
+
+    {{/with}}
+
+
+
+
+</div>
