@@ -1,0 +1,83 @@
+<div>
+    <header>
+        <div>
+            <h1>{{name}}</h1>
+        </div>
+        <hr>
+        <div>
+            <em>Birthdate: {{birthdate}}</em>
+        </div>
+        <div>
+            <p>Deathdate: {{deathdate}}</p>
+        </div>
+        <div>Nationality: {{nationality}}</div>
+        <br>
+        <div>Occupation: {{occupation}} </div>
+        <br>
+        {{#each education}}
+        <div>Degree: {{degree}}</div>
+        {{/each}}
+        <br>
+        <b>Partners</b>
+        {{#each partners}}
+        <p>name: {{name}} , {{years}}</p>
+        <p>Relationship: {{relationship}}</p>
+        {{/each}}
+    </header>
+
+    <hr>
+    <b>Publication</b>
+    {{#each notable_publications}}
+    <p>Title: {{title}} , {{year}}</p>
+    {{/each}}
+    <br>
+    <b>Awards</b>
+    {{#each awards}}
+    <p>Title: {{title}}</p>
+    <p>Year: {{year}}</p>
+    <p>Description: {{description}}</p>
+    {{/each}}
+    <br>
+    <b>Major</b>
+    {{#each major_discoveries}}
+    <p>Title: {{title}}</p>
+    <p>Year: {{year}}</p>
+    <p>Description: {{description}}</p>
+    {{/each}}
+    <br>
+    <b>Contributions</b>
+    {{#with contributions}}
+    <p>Title: {{title}}</p>
+    <p>Year: {{year}}</p>
+    <p>Description: {{description}}</p>
+    {{/with}}
+    <br>
+    <hr>
+    {{#with influences}}
+    <div>Influences: Isaac Newton,James Clerk Maxwell,Hermann Minkowski</div>
+    {{/with}}
+    <br>
+    {{#with influenced}}
+    <div>Influences: Niels Bohr,Erwin Schrödinger,Werner Heisenberg,Richard Feynman</div>
+    {{/with}}
+    <br>
+    {{#with quotes}}
+    <ul>
+        <p>Quotes:<i>
+                <li>Imagination is more important than knowledge.</li>
+                <li>I have no special talent. I am only passionately curious.</li>
+                <li>The important thing is not to stop questioning.</li>
+                <li>The most beautiful thing we can experience is the mysterious. It is the source of all true art and
+                    all science.</li>
+            </i></p>
+    </ul>
+    {{/with}}
+
+
+
+
+
+
+
+
+</div>
