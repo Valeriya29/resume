@@ -1,0 +1,148 @@
+<div>
+    <h1>Car</h1>
+    <div>
+        <h2>Toyota Camry</h2>
+    </div>
+    <div>
+        <h3>Color: SILVER </h3>
+    </div>
+    <div>
+        <h4>Year: 2022</h4>
+    </div>
+    <hr>
+    <div>
+        {{#with features}}
+        <div>
+            {{>title data='Interior'}}
+            <hr>
+            {{#with interior}}
+            <div>
+                {{#with seats}}
+                <p><strong>Seats:</strong></p>
+                <p>material: {{material}}</p>
+                <p>color: {{color}}</p>
+                <p>heated: {{heated}}</p>
+                <p>ventilated: {{ventilated}}</p>
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                {{#with dashboard}}
+                <p><strong>Dashboard:</strong></p>
+                <p>material: {{material}}</p>
+                <p>color: {{color}}</p>
+                <div>
+                    {{#with display}}
+                    <p>type: {{type}}</p>
+                    <p>size: {{size}}</p>
+                    <p>touchscreen: {{touchscreen}}</p>
+                    {{/with}}
+                </div>
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                {{#with audio}}
+                <p><strong>Audio:</strong></p>
+                <p>system: {{system}}</p>
+                <p>speakers: {{speakers}}</p>
+                <p>subwoofer: {{subwoofer}}</p>
+                <p>bluetooth: {{bluetooth}}</p>
+                <p>USB: {{USB}}</p>
+                {{/with}}
+            </div>
+            {{/with}}
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{>title data='Exterior'}}
+            <hr>
+            {{#with exterior}}
+
+            <div>
+                {{#with wheels}}
+                <p><strong>Wheels:</strong></p>
+                <p>size: {{size}}</p>
+                <p>type: {{type}}</p>
+                <p>color: {{color}}</p>
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                {{#with headlights}}
+                <p><strong>Headlights:</strong></p>
+                <p>brightness: {{brightness}}</p>
+                <p>automatic: {{automatic}}</p>
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                {{#with sunroof}}
+                <p><strong>Sunroof:</strong></p>
+                <p>type: {{type}}</p>
+                <p>size: {{size}}</p>
+                <p>automatic: {{automatic}}</p>
+                {{/with}}
+            </div>
+            {{/with}}
+        </div>
+        <hr>
+        <div>
+            {{>title data='Safety'}}
+            <hr>
+            {{#with safety}}
+            <div>
+                {{#with airbags}}
+                <p><strong>Airbags:</strong></p>
+                <p>front: {{front}}</p>
+                <p>side: {{side}}</p>
+                <p>knee: {{knee}}</p>
+                <p>rear: {{rear}}</p>
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                {{#with assistance}}
+                <p><strong>Assistance:</strong></p>
+                <p>blind_spot_monitoring: {{blind_spot_monitoring}}</p>
+                <p>rear_cross_traffic_alert: {{rear_cross_traffic_alert}}</p>
+                <p>lane_departure_warning: {{lane_departure_warning}}</p>
+                {{/with}}
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </div>
+    <br>
+    <hr>
+    <div>
+        <h3>Engine</h3>
+        {{#with engine}}
+        <p>type: {{type}}</p>
+        <p>displacement: {{displacement}}</p>
+        <p>horsepower: {{horsepower}}</p>
+        <p>torque: {{torque}}</p>
+        {{/with}}
+    </div>
+    <hr>
+    <div>
+        <h2>Price</h2>
+        <div>
+            {{#with price}}
+            <p>base: {{base}}</p>
+            <p>destination: {{destination}}</p>
+            {{#with options}}
+            <b>Option</b>
+            <p>navigation: {{navigation}}</p>
+            <p>moonroof: {{moonroof}}</p>
+            <p>premium_paint: {{premium_paint}}</p>
+            {{/with}}
+            <br>
+            <h3>TOTAL</h3>
+            <b>{{total}}</b>
+            {{/with}}
+
+        </div>
+    </div>
+</div>
