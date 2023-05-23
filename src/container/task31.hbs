@@ -22,21 +22,23 @@
             <hr>
 
             {{#with city}}
-            <div>
             <h2>{{title}}</h2>
-            </div>
+            <div class="row">
                 {{#each cards}}
-                <section class="col-5 g-1">
-                    <div class="card text-bg-light">
-                        <img class="card-img-top" src="{{picture.src}}" alt="{{picture.alt}}">
+                <div class="col-5 g-3">
+                    <div class="card">
+                        {{#with picture}}
+                        <img src="{{src}}" alt="{{alt}}" class="card-img-top">
+                        {{/with}}
                         <div class="card-body">
                             <h5 class="card-title ">{{title}}</h5>
                             <p>{{description}}</p>
                         <a href="{{button.href}}" class="btn btn-primary">{{button.text}}</a>
                     </div>
                     </div>
-                </section>
+                </div>
                 {{/each}}
+                </div>
             {{/with}}
 
             <br>
@@ -74,18 +76,23 @@
 
         {{#with gallery}}
         <h2>{{title}}</h2>
-        <div class="row g-2">
-       {{#each cards}}
-       <div class="card" class="col-4">
-       <h6 class="card-header">{{name}}</h6>
-       <ul class="list-group list-group-flush">
-        {{#each items}}
-        <li class="list-group-item">{{this}}</li>
-        {{/each}}
-       </ul>
-       </div>
-       {{/each}}
-       </div>
+
+        <div class="row">
+          {{#each cards}}
+            <div class="col-4 g-2">
+                <div class="card">
+            <h5 class="card-header">{{name}}</h5>
+            <ul class="list-group list-group-flush">
+                {{#each items}}
+                <li class="list-group-item">
+                    {{this}}
+                    </li>
+                {{/each}}
+                 </ul>
+                </div>
+               </div>
+             {{/each}}
+           </div>
        {{/with}}
 
         <br>
@@ -93,25 +100,26 @@
 
         {{#with relaxion}}
         <div class="display-3">{{title}} </div>
-        <div class="card">
         <div class="row g-3">
             {{#each cards}}
-            <div class="col-5" class="card text-bd-secondary">
+            <div class="col-5">
+            <div class="card text-bd-secondary">
                 <header class="card-title">{{header}}</header>
                 <p class="card-title-secondary">{{title}}</p>
                 <p class="text">{{description}}</p>
             </div>
+            </div>
             {{/each}}
             </div>
-        </div>
         {{/with}}
 
         <br>
         <hr>
 
+       
         {{#with rest}}
         {{#each cards}}
-                <section class="col-6">
+               <div class="col-6 g-3">
                     <div class="card">
                     <div class="card-header text-center">{{header}}</div>
                         <div class="card-body text-center">
@@ -122,19 +130,24 @@
                         <div class="card-footer text-center">{{footer}}</div>
                     </div>
                     </div>
-                </section>
+                    </div>
+                   
          {{/each}}
          {{/with}}
+          
 
          <br>
          <hr>
 
          {{#with proposition}}
          <div class="display-2">{{title}}</div>
+         <div class="row">
          {{#each card}}
-         <section class="col-5 g-1">
+         <section class="col-5">
          <div class="card text-bg-warning">
-            <div class="card-header">{{header}}</div>
+            <div class="card-header">
+                <div>{{header}} </div>
+                </div>
             <div class="card-body">
                 <h5 class="card-title-secondary">{{title}}</h5>
                 <p>{{description}}</p>
@@ -142,6 +155,7 @@
          </div>
          </section>
          {{/each}}
+         </div>
          {{/with}}
 
          <br>
@@ -151,29 +165,29 @@
         <div>
             <h5>{{title}}</h5>
         </div>
-        {{#each navigation}}
         <section class="row">
+        {{#each navigation}}
             <div class="col-3">
                 <a href="{{href}}" class="btn btn-link">{{text}}</a>
             </div>
-        </section>
         {{/each}}
+        </section>
 
+        <section class="row">
         {{#each socialMedia}}
-         <section class="row">
             <div class="col-3">
                 <a href="{{link}}" class="btn btn-outline-dark">{{name}}</a>
             </div>
-        </section>
         {{/each}}
+        </section>
 
-        {{#each partners}}
         <section class="row">
+        {{#each partners}}
             <div class="col-3">
                 <a href="{{link}}" class="btn btn-outline-info">{{name}}</a>
             </div>
-        </section>
         {{/each}}
+        </section>
         
         {{/with}}
 
