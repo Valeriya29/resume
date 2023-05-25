@@ -1,0 +1,137 @@
+<main class="p-5">
+      {{#with navigation}}
+        <div class="card">
+             <div class="nav row">
+                <ul>
+                    <li class="d-flex">
+                    {{#each links}}
+                          <a href="{{href}}" class="nav-link {{#unless href includeZero=true}} disabled {{/unless}}"
+                    target="_blank">{{text}}</a>
+                    {{/each}}
+                    </li>
+                </ul>
+             </div>
+        </div>
+     {{/with}}
+
+     <div class="row">
+            {{#with formBlock}}
+            <div class="col-8 mb-4">
+                <div class="display-4 my-5">
+                    <h2>{{header}}</h2>
+                </div>
+                    {{#with rating}}
+                    <div class="col-2">
+                        <a>{{title}}:{{value}}</a>
+                    </div>
+                    {{/with}}
+
+                    {{#with actionBlock}}
+                    
+                     <ul class="nav nav-tabs">
+                    <li class="d-flex">
+                    {{#each tabs}}
+                         <a  class="nav-link {{#if @last}} disabled {{/if}}"
+                    target="_blank">{{text}}</a>
+                    {{/each}}
+                    </li>
+                    </ul>
+                     
+
+                    <hr class="my-4">
+
+                    {{#with report}}
+                    <div class="row">
+                    <div class="card">
+                        <p>{{title}}</p>
+                        {{#with button}}
+                        <a href="{{link}}" class="btn btn-second col-5 mb-1" target="_blank" >{{text}}</a>
+                        {{/with}}
+
+                    </div>
+                    </div>
+                    {{/with}}
+                    {{/with}}
+
+
+                     <hr class="my-4">
+
+                    {{#with feedbackBlock}}
+                    <div class="display-4 my-5">
+                    <h2>{{title}}</h2>
+                    </div>
+                    {{#each buttons}}
+                     {{#if isWarning}} <a href="{{link}}" class="btn btn-warning col-3 mx-2"
+                        target="_blank">{{text}}</a>{{/if}}
+                    {{#if isSuccess}} <a href="{{link}}" class="btn btn-success col-3 mx-3"
+                        target="_blank">{{text}}</a>{{/if}}
+                    {{#if isDanger}} <a href="{{link}}" class="btn btn-danger col-3 mx-3"
+                        target="_blank">{{text}}</a>{{/if}}
+                    {{/each}}
+
+                    {{/with}}
+
+               </div>
+
+                  
+                <div class="col-4 p-4">
+                 {{#with goodsInfo}}
+                 <div class="row">
+                    <div class="card">
+                     <div >
+                    <img class="card-img-top mb-2 mt-2" src="{{photo}}">
+                    </div>
+                    <p>{{name}}</p>
+                    </div>
+                 </div>
+             <br>
+                    <div class="row">
+                    <div class="card">
+                        <p>{{price}}</p>
+                        {{#if inMarker}}<a>є в наявності </a>{{/if}}
+
+                      <div class="col-4">
+                        {{#each buttons}}
+                        {{#if isPrimary}}<a href="{{link}}" class="btn btn-primary my-3" target="_blank">{{text}}</a>{{/if}}
+                        {{#if isSecondary}}<a href="{{link}}" class="btn btn-success my-2" target="_blank">{{text}}</a>{{/if}}
+                        {{/each}}
+                      </div>
+                     </div>
+                    
+                
+                         <div class="card"> 
+                                {{#with seller}}
+                            <p>{{title}}:{{value}}</p>
+                            {{/with}}
+                        </div>
+                        
+
+
+                    </div>
+                    
+                    
+                
+                  
+                  {{/with}}
+                  </div>
+                  </div>
+                  
+                  </div>
+
+                    
+
+            
+            {{/with}}
+        </div>
+     </div>
+
+
+     </div>
+
+
+    <hr class="my-4">
+
+
+
+
+</main>
