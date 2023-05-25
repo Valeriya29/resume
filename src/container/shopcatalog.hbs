@@ -47,31 +47,24 @@
     <div class="row">
         <div class="col-4">
             <div class="card">
+                <div class="card-body">
                 {{#with filterBlock}}
-                {{#with sellers}}
-                <div class="form-list m-3">{{title}}
-                {{#each list}}
-                <div class="form-check ">
-                    <label class="from-check-label">{{value}}</label>
-                    <input name="filterList" type="checkbox" class="form-check-input">
+                <div class="card-title">{{sellers.title}}</div>
+                {{#each sellers.list}}
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">{{value}}</label>
                 </div>
                 {{/each}}
+                <hr>
+                <div class="card-title">{{brands.title}}</div>
+                <input class="form-control mb-3" placeholder="{{brands.input.placeholder}}">
+                {{#each brands.option}}
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">{{value}}</label>
                 </div>
-                <hr class="mx-2 {{#if @last}} disabled {{/if}}">
-                {{/with}}
-
-                {{#with brands}}
-                <div class="form-label m-3">{{title}}</div>
-                    {{#with input}}
-                    <input class="form-control" placeholder:{{placeholder}}>
-                    {{/with}}
-                    {{#each options}}
-                    <div class="form-check">
-                    <label class="from-check-label">{{value}}</label>
-                    <input name="filterList" type="checkbox" class="form-check-input">
-                    </div>
-                    {{/each}}
-                {{/with}}
+                {{/each}}
                 
 
                 <hr class="mx-2 {{#if @last}} disabled {{/if}}">
@@ -95,22 +88,100 @@
                  <hr class="mx-2 {{#if @last}} disabled {{/if}}">
 
                  {{#each filterList}}
-                 <div class="form-label m-3">{{title}}</div>
-                 {{#each option}}
-                 <div class="form-check ">
-                    <label class="from-check-label">{{value}}</label>
-                    <input name="filterList" type="checkbox" class="form-check-input">
-                </div>
-
-                 {{/each}}
-
+                <div class="card-title">{{title}}</div>
+                 <div class="form-check">
+                    {{#each options}}
+                    <input class="form-check-input" type="checkbox">
+                    <div><label class="form-check-label">{{value}}</label></div>
                 {{/each}}
-              
+                </div>
+                {{#unless @last}}
+                <hr>
+                {{/unless}}
+                {{/each}}
+              {{/with}}
+              </div>
+            </div>
+        </div>
+        <div class="col-8">
+        <div class="row">
+          {{#each goodsList}}
+          <div class="col-6">
+          <div class="card">
+           <div class="card-text-bg-light">
+            <img class="card-img-top" src="{{img}}">
+           <div class="cart-body">
+            <div class="card-title">
+                <div class="mb-2">
+                    {{#if isHot}}<span class="badge text-bg-warning rounded-pill">Hot!</span>{{/if}}
+                    {{#if isNew}}<span class="badge text-bg-primary rounded-pill">Нове</span>{{/if}}
+                </div>
+                <div>
+                    {{#if isFast}}<span class="badge text-bg-success ">Швидка доставка</span>{{/if}}
+                    {{#if isFree}}<span class="badge text-bg-secondary ">безкоштовна доставка</span>{{/if}}
+                </div>
+            </div>
+            <h5>{{name}}</h5>
+            <p>{{review.amount}}{{review.text}}</p>
+            <h4>{{price}}</h4>
+            <p>{{delivery}}</p>
+
+            <div>
+                {{#each buttons}}
+               <div class="mb-2">{{#if isPrimary}} <a href="{{link}}" class="btn btn-secondary m-1" target="_blank">{{text}}</a>{{/if}}</div> 
+                 <div clas="mb-2">{{#if isSecondary}} <a href="{{link}}" class="btn btn-secondary m-1" target="_blank">{{text}}</a>{{/if}}</div>
+                {{/each}}
             </div>
 
+              {{#each characteristics}}
+                <ul class="ms-0 mb-1">
+                    <li>
+                        {{title}}:{{value}}
+                    </li>
+                </ul>
+                {{/each}}
         </div>
 
+      </div>
     </div>
+   </div>
+   {{/each}}
+
+        </div> 
+
+    </div>
+    </div>
+
+     <div class="card text-bg-success my-5">
+        {{#with service}}
+        <div class="card-body text-center">
+            <h2 class="card-title">{{title}}</h2>
+            <p>{{description}}</p>
+            {{#each buttons}}
+            <a class="btn btn-primary" href="{{link}}" target="_blank">{{text}}</a>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+
+
+    <hr class="py-2">
+
+    <div class="row">
+        {{#each footer}}
+        <div class="nav col-2">
+            {{#each this}}
+            <div>
+                <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{link}}">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+    
+
+
+   
 
 
 
