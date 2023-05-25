@@ -47,11 +47,12 @@
 
                     </div>
 
-                    {{>purchaseItem}}
-                    
                  {{/with}}
 
             </div>
+
+            
+            {{>purchaseItem}}
         
 
         <hr class="my-4"> 
@@ -175,10 +176,10 @@
 
         <div class="row">
                 {{#each footer}}
-                <div class="na col-2">
+                <div class="nav col-2">
                     {{#each this}}
                     <div>
-                        <a class="nav-link" {{#if @last}} disabled {{/if}} href="{{link}}"> {{text}}</a>
+                        <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{link}}"> {{text}}</a>
                     </div>
                     {{/each}}
                 </div>
