@@ -1,0 +1,31 @@
+<div class="col-12">
+                {{#each itemList}}
+                <div class="row">
+                    <div class="col-4">
+                    <p>{{number}}</p>
+                    <b>{{status}}</b>                  
+                </div>
+
+                <div class="col-2">
+                    <p>{{amount.title}}</p>
+                    <h5>{{amount.value}}</h5>
+                </div>
+
+                <div class="col-4">
+                    {{#each images}}
+                    <img wight="80px" class="m-1" src="{{this}}">
+                    {{/each}}
+                </div>
+
+                <div class="col-2">
+                    {{#with button}}
+                    {{#if isPrimary}}<a href="{{link}}" class="btn btn-prymary my-3" tafger="_blank">{{text}}</a>{{/if}}
+                    {{/button}}
+
+                </div>
+                </div>
+                {{/each}}
+
+
+
+ </div>
