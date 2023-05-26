@@ -1,0 +1,106 @@
+<div>
+    <header>
+        <h1>Apple MacBook Pro</h1>
+        <br>
+        <h2>The ultimate notebook for power users</h2>
+        <br>
+        <h3>price: 1999.99 $</h3>
+    </header>
+    <hr>
+    <div>
+        {{>title data="Computers & Tablets"}}
+        {{#with features}}
+        <div>
+            {{#with processor}}
+            <p><strong>Processor</strong></p>
+            <p>brand: {{brand}}</p>
+            <p>model: {{model}}</p>
+            <p>speed: {{speed}}</p>
+            <p>cores: {{cores}}</p>
+            <p>cache: {{cache}}</p>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            {{#with memory}}
+            <p><strong>Memory</strong></p>
+            <p>type: {{type}}</p>
+            <p>size: {{size}}</p>
+            <p>speed: {{speed}}</p>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            {{#with storage}}
+            <p><strong>Storage</strong></p>
+            <p>type: {{type}}</p>
+            <p>size: {{size}}</p>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            {{#with display}}
+            <p><strong>Display</strong></p>
+            <p>size: {{size}}</p>
+            <p>resolution: {{resolution}}</p>
+            <p>technology: {{technology}}</p>
+            <p>color_space: {{color_space}}</p>
+            <p>brightness: {{brightness}}</p>
+            <p>refresh_rate: {{refresh_rate}}</p>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            {{#with graphics}}
+            <p><strong>Graphics</strong></p>
+            <p>brand: {{brand}}</p>
+            <p>model: {{model}}</p>
+            <p>memory: {{memory}}</p>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            {{#if ports}}<h4>Ports</h4>{{/if}}
+            <ul>
+                {{#each ports}}
+                <li>type: {{type}}</li>
+                <li>count:{{count}}</li><br>
+                <p>{{#if features}} ( {{features}} ) {{/if}}</p>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <div>
+            {{#with battery}}
+            <p><strong>Battery</strong></p>
+            <p>type: {{type}}</p>
+            <p>capacity: {{capacity}}</p>
+            <p>life: {{life}}</p>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            {{#with dimensions}}
+            <p><strong>Dimensions</strong></p>
+            <p>height: {{height}}</p>
+            <p>width: {{width}}</p>
+            <p>depth: {{depth}}</p>
+            {{/with}}
+        </div>
+        <hr>
+        <p><strong> operating_system: 'macOS' </strong></p>
+        <hr>
+        <div>
+            {{#if accessories}}<h4>Accessories</h4>{{/if}}
+            <ul>
+                {{#each accessories}}
+                <li>name: {{name}}</li>
+                <li>price:{{price}}</li><br>
+                {{/each}}
+            </ul>
+        </div>
+        {{/with}}
+
+
+    </div>
+</div>
