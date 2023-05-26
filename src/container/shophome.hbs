@@ -1,0 +1,136 @@
+<header>
+    {{#with navigation}}
+        <div class="card">
+             <div class="nav row">
+                <ul class="col-4">
+                    <li class="d-flex">
+                    {{#each links}}
+                        <a class="nav-link pt-3" href="{{href}}">{{text}}</a>
+                    {{/each}}
+                    <a class="nav-link disabled pt-3" href="#"> Disabled</a>
+                    </li>
+                </ul>
+             </div>
+        </div>
+     {{/with}}
+</header>
+
+<main>
+        {{#with newsBlock}}
+        <h2 class="text-center mt-5">{{title}}</h2>
+        <div class="col-12">
+            <div class="row">
+                {{#each cards}}
+                <div class="col-3">
+                <div class="alert alert-dark " class>
+                    {{#if isTop }}
+                    <div class="badge rounted-pill text-bg-success ms-4">Top</div>
+                    {{/if}}
+                    {{#if isNew}}
+                    <div class="badge rounted-pill text-bg-danger ms-3">New</div>
+                    {{/if}}
+                    <div class=" mb-3">{{title}}</div>
+                    <div>{{description}}</div>
+                </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>   
+        {{/with}}
+
+
+        <hr class="mt-5 mb-5">
+
+        {{#with goodsBlock}}
+            <div class=" nav row">
+                <div class="col-12">
+                    <ul class="nav nav-tabs mb-5">
+                    {{#each tabs}}
+                    <li class="nav-link {{#if isActive}} active {{/if}} {{#if isDisabled}} disabled {{/if}}">
+                        {{text}}
+                    </li>
+                     {{/each}}
+                    </ul>  
+                <div class="row">
+                {{#each cards}}
+                <div class="col-4">
+                <div class="card mt-2 mb-1">
+                    <img src="{{image}}" class="card-img-top">
+                    <div class="card-body">
+                    <h5 class="card-title ">{{title}}</h5>
+                    {{#if isHot}}
+                    <div class="badge rounted-pill text-bg-warning mb-2 ">Hot!</div>
+                    {{/if}}
+                    {{#if isNew}}
+                    <div class="badge rounted-pill text-bg-primary m-2">New</div>
+                    {{/if}}
+                    <p>{{description}}</p>
+                </div>
+                </div>
+                </div>
+            {{/each}}
+            </div>
+                 </div>
+            </div>
+       {{/with}}
+
+       <hr class="mt-5 mb-5">
+
+    <div class="row col-12 py-2">
+         {{#with subscribe}}
+        <div class="card text-bg-dark">
+            <h2 class="m-3">{{header}}</h2>
+            <p class="ms-3">{{description}}</p>
+            {{#each buttons}}
+            <a href="{{link}}" class="ms-3 mt-2 mb-3" target="blank" >
+                <button class="btn btn-primary">{{text}}</button>
+            </a>
+            {{/each}}
+        </div>
+     {{/with}}
+ </div>
+
+  <hr class="mt-5 mb-5">
+
+   <div class="row col-12 pt-2">
+       {{#with service}}
+       <div class="card text-bg-success text-center">
+            <h2 class="m-3">{{title}}</h2>
+            <p class="ms-3">{{description}}</p>
+            {{#each buttons}}
+            <a class="ms-3 mt-3 mb-3" href="{{link}}">
+                <button class="btn btn-primary" >{{text}}</button>
+            </a>
+            {{/each}}
+        </div>
+     {{/with}}
+    </div>
+
+
+    <hr class="mt-5 mb-5">
+
+    <div class="row g-5">
+        {{#each footer}}
+        <div class="nav col-2">
+            {{#each this}}
+            <div>
+                <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{link}}">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+    </main>
+  
+
+
+
+
+
+      
+     
+
+
+        
+    
+ 
