@@ -1,0 +1,77 @@
+<div>
+    <header>
+        <div>
+            <h1>{{name}}</h1>
+        </div>
+        <div>
+            <b>Description: {{description}}</b>
+        </div>
+        <br>
+        <div>
+            {{#with history}}
+            <em>Founder: {{founder}} , {{year}}</em>
+            {{/with}}
+        </div>
+    </header>
+    <hr>
+    <div>
+        {{>title data="Types"}}
+        {{#with types}}
+        <ul>
+            <li>Number</li>
+            <li>String</li>
+            <li>Boolean</li>
+            <li>Null</li>
+            <li>Undefined</li>
+            <li>Symbol</li>
+            <li>Object</li>
+        </ul>
+        {{/with}}
+    </div>
+    <br>
+    <div>
+        {{>title data='Syntax'}}
+        {{#with syntax}}
+        <p>Variables: {{variables}}</p>
+        <p>Functions: {{functions}}</p>
+        <p>Conditionals: {{conditionals}}</p>
+        <p>Loops: {{loops}}</p>
+        <p>Classes: {{classes}}</p>
+        {{/with}}
+    </div>
+    <br>
+    <div>
+        {{>title data='Features'}}
+        <ul>
+            {{#with features}}
+            <li>First-class functions</li>
+            <li>Closures</li>
+            <li>Dynamic typing</li>
+            <li>Prototype-based inheritance</li>
+            <li>Asynchronous programming with Promises and async/await</li>
+            <li>Modules with import/export statements</li>
+            {{/with}}
+        </ul>
+    </div>
+    <br>
+    <div>
+        {{>title data='Libraries'}}
+        {{#with libraries}}
+        <b><i> jQuery, React, Angular, Vue, Node.js, Express.js, Lodash, Moment.js</i></b>
+        {{/with}}
+    </div>
+    <br>
+    <div>
+        {{>title data='Tools'}}
+        {{#with tools}}
+        <p><em>Babel, Webpack, ESLint, Jest, Mocha, Chai, Selenium, Cypress,</em></p>
+        {{/with}}
+    </div>
+    <div>
+        {{>title data='Community'}}
+        {{#each community}}
+        <p>Name: {{name}}</p>
+        <p>Type: {{type}}</p><br>
+        {{/each}}
+    </div>
+</div>
