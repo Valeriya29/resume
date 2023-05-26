@@ -131,16 +131,16 @@
      </div>
 
      <div class="row">
-                {{#each footer}}
-                <div class="na col-2">
-                    {{#each this}}
-                    <div>
-                        <a class="nav-link {{#if @last}}disabled{{/if}}" href="{{link}}">{{text}}</a>
-                    </div>
-                    {{/each}}
-                </div>
-                {{/each}}
-         </div>
+        {{#each footer}}
+        <div class="nav col-2">
+            {{#each this}}
+            <div>
+                <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{link}}">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
    
 
 
