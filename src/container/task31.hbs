@@ -1,16 +1,17 @@
-<main>
+<main class="m-5">
     <div class="row">
         <div class="col-12">
             {{#with navigation}}
             <nav>
                 {{#each links}}
-                <a class="btn btn-link" href="{{href}}">{{text}}</a>
+                <a class="btn btn-link m-4" href="{{href}}">{{text}}</a>
                 {{/each}}
                 <a class="btn btn-primary m-4" href="{{button.href}}">{{button.text}}</a>
             </nav>
             {{/with}}
 
             <hr>
+
             {{#with header}}
             <h1>{{title}}</h1>
             <p>{{description}}</p>
