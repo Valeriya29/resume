@@ -7,30 +7,31 @@ const router = express.Router()
 
 var header = {
   name: {
-    firstname: 'Ivan',
-    lastname: 'Ivanov',
+    firstname: 'Valeriya',
+    lastname: 'Bielichenko',
   },
   position: 'unior Fullstack JS Developer',
   salary: '600$ in month',
-  address: 'Ukraine,Kyiv city,Tarasa Shevchenka street,21',
+  address: 'Ukraine,Kyiv',
 }
 
 var footer = {
   social: {
     email: {
-      text: 'ivanov@mail.com',
-      href: 'mailto:ivanov@mail.com',
+      text: 'valeriyabielichenko@mail.com',
+      href: 'mailto:valeriyabielichenko@mail.com',
     },
     phone: {
-      text: '+380670000123',
-      href: 'tel:+380670000123',
+      text: '+380939910789',
+      href: 'tel:+380939910789',
     },
     linkedin: {
-      href: 'https://www.linkedin.com/in/ivanov-test',
       text: 'LinkedIn',
+      href: 'http://linkedin.com/in/valeriya-b-465399271',
     },
   },
 }
+
 
 // ================================================================
 
@@ -41,7 +42,13 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    header,
+    page: {
+      title: 'Resume Project',
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -854,7 +861,8 @@ router.get('/facebook', function (req, res) {
         ],
       },
     ],
-=======
+  })
+})
 
 router.get('/mac', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -939,7 +947,9 @@ router.get('/mac', function (req, res) {
           price: 19.99,
         },
       ],
-=======
+    }
+  })
+})
 router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -3006,6 +3016,7 @@ router.get('/shopcatalog', function (req, res) {
 })
 
 // ================================================================
+
 
 // Підключаємо роутер до бек-енду
 module.exports = router
