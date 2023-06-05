@@ -169,3 +169,113 @@ h1 ~ * > p {
   color:green;
   background: yellow;
  }
+
+ /* селектор цільового тегу-вибирає тег,якщо він має свій якір та в URL сторінки вибраний цей якір.
+ Якір-це посилання в форматі #id,в якому замість id вказане значення атрибута id певного тегу.(браузер буде прокручувати сторінку до тегу з цим id) ":target"*/
+ #test:target {
+  color:red;
+ }
+
+ /* селектор невідвіданих посилань-вибирає тег <a>,якщо по його посиланню користувач ще не переходив ":link".*/
+ .link:link {
+  color: red;
+ }
+
+ /* селектор наведення-вказує стилізацію в той момент,коли користувач навів мишкою на тег ":hover". */
+ .link:hover {
+  color: green;
+ }
+ .card:hover {
+  background: rgb(177, 176, 176);
+ }
+
+ /* селектор активного тегу-вибирає тег,коли користувач натиснув на нього мишкою ":active". */
+ .link:active {
+  color: purple;
+ }
+  .card:active {
+  background: purple;
+ }
+
+ /* селектор фокусованого тегу-вибирає тег,коли користувач почав взаємодію з ним.використовується в більшості випадків для <input> тегу ":focus".
+ селектор фокус всередині тегу-вибирає тег,коли користув.почав взаємодіяти з ним або його дитютегамиювикористюв бульшості випадків для <form> тегу ":focus-within".*/
+input {
+  background-color: gray;
+} 
+
+input:focus {
+  background-color: red;
+} 
+ 
+.card:focus-within {
+  background: red;
+}
+/* селектор мови тегу-вибирає тег,який має атрибут lang з вказаним значенням ":lang(value)". */
+.card:lang(en) > span::after{
+  content: ' (en)';
+}
+/* селектор увімкненого тегу-вибирає тег форми,який доступний та не заблокований для дії ":enabled",для тегів(input,button,select).
+селектор вимкненого тегу-вибирає тег форми,який не доступний та заблокований для дії ":disabled",для тегів(input,button,select)*/
+button {
+  background-color: greenyellow;
+}
+
+button:enabled {
+  background-color: #01b219;
+}
+
+button:disabled {
+  background-color:aqua;
+}
+
+/* селектор редагованого тегу-вибирає тег форми,в який ми можемо вводити свої знaчення ":read-write" використов.в більшості випадків для <input>.
+селектор нередагованого тегу-вибирає тег форми,в який ми не можемо вводити свої знaчення,а лише читати ":read-only".*/
+.inp:read-write {
+  background-color: blue;
+}
+
+.inp:read-only {
+  background-color: red;
+}
+
+/* селектор відміченого тегу-який вибирає тег форми,який був відмічений або вибраний користувачем ":checked".*/
+input[type='checkbox']:checked ~span{
+  background: red;
+}
+
+/* селектор валідного тегу-який вибирає тег поля форми,який пройшов валідацію і є валідним ":valid".
+селектор невалідного тегу-який вибирає тег поля форми,який не пройшов валідацію і не є валідним ":invalid".
+селектор необовʼязкового тегу-вибирає тег поля форми,який є не обовʼязковим та має атрибут optional ":optional".*/
+.valid:valid {
+  background: yellow;
+}
+
+.valid:invalid {
+  background: goldenrod;
+}
+
+.valid:optional {
+  background: green;
+}
+
+/* селектор за межі діапазону тегу-вибирає <input> тег,значення якого виходить за межі вказаного діапазону атрибутів min та max ":out-of-range". 
+селектор в межах діапазону тегу-вибирає <input> тег,значення якого знаходиться в межах вказаного діапазону атрибутів min та max ":in-range".*/
+.number:focus {
+background: grey;
+}
+
+.number:out-of-range {
+  background: red;
+}
+
+.number:in-range {
+  background: green;
+}
+.number:invalid {
+  background: yellow;
+}
+
+/* селектор наявності плейсхолдера в тегу-який вибирає <input> тег,який має атрибут placeholder ":placeholder-shown". */
+input:placeholder-shown ~span {
+  background: pink;
+}
